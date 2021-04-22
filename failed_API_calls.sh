@@ -16,6 +16,8 @@ FILE_L=${1}
 #obtain the error codes
 grep status_code ${FILE_L} | awk '{print $NF}' > failed_status.txt
 
+echo "HELLO WORLD!!"
+
 #obtain the URL 
 grep ERROR ${FILE_L} | grep http | awk -F- '{print $4}'|awk '{print $1}'|tee failed_api_calls.txt | awk -F? '{print $2}'>failed_parameters.txt
 	
